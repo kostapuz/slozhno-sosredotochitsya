@@ -1,5 +1,192 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 .page {
+  
+  box-sizing: border-box;
+  padding: 10px;
+  background-image: url(../images/cover-image-dark.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+  max-width: 375px;
+    
+  
+  
+  /*background-color: #000028;*/
+
+ 
+
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+}
+
+.header {
+  min-height: 668px;
+  display: grid;
+  position: relative;
+}
+.header__record {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  position: absolute;
+  top:0;
+  right: 28px;
+}
+
+
+.header__corner {
+  width: 27px;
+  height: 27px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+}
+
+.header__corner_type_top{
+  justify-self: end;
+}
+
+.header__corner_type_top::after{
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-left: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+
+.header__corner_type_bottom {
+  transform: rotate(180deg);
+  align-self: end;
+}
+
+
+.header__theme-menu-list {
+  display: grid;
+  gap: 25px;
+  justify-items: end;
+  padding-top: 75px;
+  padding-right: 10px;
+  color: var(--accent-color);
+}
+.header__theme-menu-button {
+  background-color: transparent;
+  text-transform: lowercase;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  border: none;
+}
+
+.header__theme-menu-button:hover {
+  cursor: pointer; 
+}
+
+.header__theme-menu-button:focus {
+
+}
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent-color);
+  outline-offset: 3px;
+  pointer-events: none;
+}
+
+
+
+
+.header__title {
+  font-weight: 700;
+  font-size: 116px;
+  line-height: 95.7px;
+  color: var(--h1-color);
+  text-shadow: 4px 4px var(--accent-color);
+  margin: 0 3px;
+}
+
+.header__description {
+  align-self: center;
+  color: #000028;
+  background-color: var(--accent-color);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  margin: 0 10px 50px;
+}
+
+.link {
+  text-shadow: 2px 2px var(--accent-color);
+  text-decoration: none;
+  transition: transform 4s ease-in-out 1s;    /*_____________-----посмотреть еще----*/
+}
+
+.link:hover {
+text-decoration: underline;
+
+}
+
+.link:focus {
+  /* outline: 1px solid rgba(241, 178, 206, 0.5); */
+outline: none;
+border: 1px solid green;
+margin: 0;
+
+}
+
+/*-------------------------Ниже группа Main content -------*/
+
+.article {
+  margin: 50px 10px 0;
+  
+}
+
+.article__heading {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+
+}
+
+ul{
+  display: grid;
+  gap: 20px;
+}
+
+.article__answer{
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  color:#000028;
+  background-color: var(--accent-color);
+}
+
+.article__answer_list{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  color: var(--h5-color);
+  background-color: var(--accent-color);
+
+}
+
+
+.article__text {
+  padding-top: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  color: var(--text-color);
+  background-color: #000028;
+  font-size: 18px;
 }
