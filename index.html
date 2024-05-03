@@ -18,8 +18,8 @@
   </head>
   <body class="page">
     <header class="header decorated-zone">
-      <p class="header__record">rec</p>
-      <div class="header__corner header__corner_type_top"></div>
+      <p class="header__record-sign" aria-hidden="true">rec</p>
+      <div class="corner corner_type_top header__corner_type_top "></div>
       <nav class="header__theme-menu">
         <ul class="header__theme-menu-list">
           <li class="header__theme-menu-item">
@@ -49,15 +49,16 @@
       <h1 class="header__title">no focus</h1>
       <p class="header__description">Что делать, когда не можешь делать ничего<br>Или почему нам так сложно сконцентрироваться, особенно когда очень надо
       </p>
-      <div class="header__corner header__corner_type_bottom"></div>
+      <div class="corner corner_type_bottom"></div>
     </header>
     <script src="./scripts/script.js"></script>
 
 
 
-    <main>
+    <main class="main">
       <article class="article article_first">
-        <ul><h3 class="article__heading">Почему сосредоточиться так сложно</h3>
+        <h3 class="article__heading">Почему сосредоточиться так сложно</h3>
+        <ul>
          <li><h4 class="article__answer">Многозадачность</h4>
           <p class="article__text">Особенно сложно сосредоточиться, когда задач много и все они — важные. Где же легендарная многозадачность, когда она так нужна вам (и всем нанимающим менеджерам этого мира)? А дело в том, что её просто не существует. Исследователи <a class="link" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7075496/" target="_blank">выяснили</a>, что мозгу тяжело концентрироваться даже на двух делах одновременно. А когда в поле внимания попадает несколько важных задач, организм паникует и выделяет кортизол и адреналин — «гормоны стресса». Из-за этого мы работаем невнимательно: ошибаемся и быстро устаём.</p>
          </li>
@@ -70,7 +71,8 @@
 
 
       <article class="article article_second">
-        <ul><h3 class="article__heading">Что снижает концентрацию внимания?</h3>
+        <h3 class="article__heading">Что снижает концентрацию внимания?</h3>
+        <ul>
          <li><h4 class="article__answer">Многозадачность</h4>
           <p class="article__text">Как концентрация может снижаться из-за… концентрации? Любая стрессовая ситуация (и резко меняющийся мир в целом) заставляет наш мозг постоянно «сканировать» окружающую среду на предмет опасности. Например, читать новости вместо работы. Но быть собранными всё время — невозможно. Концентрация — мышца, и она может не выдержать, если не давать ей отдохнуть.</p>
          </li>
@@ -80,13 +82,14 @@
          <li><h4 class="article__answer">Гаджеты</h4>
           <p class="article__text">Да-да, это та самая ситуация, когда на экране ноутбука — код, в наушниках — подкаст, а на компьютере фоном — ещё и видео с забавными утятами. В результате мозг пытается переключиться с одной задачи на другую — и просто не может. А чтобы вернуться к состоянию полной концентрации, человеку в среднем нужно 20 минут. Вот и получается, что чем больше времени мы проводим в гаджетах, тем больше времени затем нужно, чтобы вернуться к работе.</p>
         </li>
-      </ul>
+       </ul>
       </article>
 
 
       <article class="article article_third">
         <h3 class="article__heading">Как концентрироваться лучше, чем золотая рыбка (то есть дольше трёх секунд)</h3>
-        <ul><h4 class="article__answer">5 простых (на самом деле не очень) советов</h4>
+        <h4 class="article__answer">5 простых (на самом деле не очень) советов</h4>
+        <ul>
          <li><h5 class="article__answer_list">Представьте небо и облака</h5>
           <p class="article__text">Или листья в ручье. Тут дело в лёгкой медитации, которая помогает успокоиться. Ведь часто именно тревожные мысли о сложных задачах как раз и мешают эти сложные задачи делать. В такие моменты можно закрыть глаза и представить, что чистое небо — это вы, а облака — тревожные мысли. И сколько бы их ни было — ясное небо всегда будет где-то там, за тучами, и никуда не денется. Это упражнение поможет вернуться в настоящий момент, а не волноваться о потенциальных проблемах из будущего.</p>
          </li>
@@ -106,20 +109,25 @@
       </article>
 
 
-
-      
-      
-
-
-
-
-
-
-      <section class="pictures"></section>
+      <section class="pictures">
+        <h4 class="article__answer">А можно в картинках?</h4>
+        <img src="images/sunset.png" loading="lazy" alt="Горы и озеро на фоне заката">
+        <img src="images/ice-cream.png" loading="lazy" alt="Мороженое">
+        <img src="images/tape.png" loading="lazy" alt="Аудио-кассета">
+        <img src="images/books.png" loading="lazy" alt="Стопка книг">
+        <img src="images/street.png" loading="lazy" alt="Улица">
+      </section>
     </main>
 
 
 
-    <footer></footer>
+
+
+
+    <footer class="footer decorated-zone">
+      <div class="corner corner_type_top"></div>
+      <h2 class="footer__title">focus</h2>
+      <div class="corner corner_type_bottom"></div>
+    </footer>
   </body>
 </html>

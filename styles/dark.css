@@ -9,13 +9,21 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --bg-image: url(../images/cover-image-dark.png);
+  --accent-color: #ff0070;
+  --menu-list-color: #ff0070;
+  --h1-color: #DB00FF;
+  --text-color: #F1B2CE;
+  --h5-color: #000028;
 
-  
-
-
-
-
-
-
-
+  .article__heading{
+    color: var(--accent-color,#ff0070 )
+  }
+  .header__theme-menu-button:hover {
+    outline: 1px solid rgba(241, 178, 206, 0.5);
+  }
+  .link:focus {
+    outline: 1px solid var(--text-color, #F1B2CE); 
+    }
 }
+
