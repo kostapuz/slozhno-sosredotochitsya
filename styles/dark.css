@@ -16,6 +16,29 @@
   --text-color: #F1B2CE;
   --h5-color: #000028;
 
+  .header__record-sign {
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    position: absolute;
+    top:0;
+    right: 28px;
+  }
+  
+  .header__corner_type_top::after{
+    content: "";
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-left: 8px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 4px 2px var(--accent-color);
+  }
+
   .article__heading{
     color: var(--accent-color,#ff0070 )
   }
