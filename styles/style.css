@@ -2,8 +2,11 @@
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
+
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
