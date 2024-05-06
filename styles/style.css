@@ -10,7 +10,6 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  margin: 0 auto;
   padding: 0 10px;
   background-image: var(--bg-image);
   background-size: cover;
