@@ -462,7 +462,7 @@
     display: flex;
     margin-block-start: 10px;
   }
-  
+
   .header__title {
     margin-inline-start: -20px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -500,7 +500,7 @@
   }
 
   /*  Блок-2 */
-  
+
   .article_second .article__heading {
     grid-column: 1/2;
   }
