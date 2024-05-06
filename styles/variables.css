@@ -6,14 +6,8 @@
   --bg-image: url(../images/cover-image-dark.png);
   --accent-color: #ff0070;
   --menu-list-color: #ff0070;
-  --h1-color: #DB00FF;
-  --text-color: #F1B2CE;
+  --h1-color: #db00ff;
+  --h1-shadow-desktop: #ff0070;
+  --text-color: #f1b2ce;
   --h5-color: #000028;
-
-  .header__theme-menu-button:hover {
-    outline: 1px solid rgba(241, 178, 206, 0.4);
-  }
-  .link:focus-visible {
-    outline: 1px solid rgba(241, 178, 206, 0.4); 
-    }
 }
