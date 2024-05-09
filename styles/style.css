@@ -1,12 +1,4 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
@@ -24,6 +16,7 @@
 
 /*------------------ Ниже Header ------------------*/
 .header {
+  min-height: 338px;
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
@@ -33,28 +26,37 @@
   position: relative;
 }
 
-.corner {
+.decorated_zone {
+  position: relative;
+}
+
+.decorated_zone::before {
+  content: "";
+  display: inline-block;
   width: 25px;
   height: 25px;
   border-top: 1px solid var(--accent-color);
   border-right: 1px solid var(--accent-color);
-}
-
-.corner_type_top {
-  position: absolute;
   top: 10px;
   right: 0;
+  position: absolute;
 }
 
-.corner_type_bottom {
+.decorated_zone::after {
+  content: "";
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
   transform: rotate(180deg);
-  position: absolute;
-  left: 0;
   bottom: 10px;
+  left: 0;
+  position: absolute;
 }
 
 .header__record-sign {
-  display: block;
+  display: inline-block;
   font-size: 18px;
   font-weight: 400;
   line-height: 25px;
@@ -62,15 +64,15 @@
   text-transform: uppercase;
   position: absolute;
   top: 10px;
-  right: 28px;
+  right: 10px;
 }
 
-.header__corner_type_top::after {
+.header__record-sign:after {
   content: "";
   display: inline-block;
   width: 9px;
   height: 9px;
-  margin-left: 6px;
+  margin-inline-start: 8px;
   border-radius: 50%;
   background-color: var(--accent-color);
   box-shadow: 0 0 4px 2px var(--accent-color);
@@ -84,7 +86,7 @@
 .header__theme-menu-list {
   display: grid;
   gap: 15px;
-  color: var(--menu-list-color);
+  color: var(--accent-color);
 }
 
 .header__theme-menu-button {
@@ -128,7 +130,7 @@
 
 .header__description {
   margin-block-end: 10px;
-  color: var(--h5-color);
+  color: var(--heading-color);
   background-color: var(--accent-color);
   font-weight: 700;
   font-size: 18px;
@@ -192,7 +194,7 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 23.4px;
-  color: var(--h5-color);
+  color: var(--heading-color);
   background-color: var(--accent-color);
 }
 
@@ -202,7 +204,7 @@
   font-size: 18px;
   font-weight: 700;
   line-height: 23.4px;
-  color: var(--h5-color);
+  color: var(--heading-color);
   background-color: var(--accent-color);
 }
 
@@ -222,21 +224,19 @@
 .pictures {
   display: flex;
   flex-direction: column;
-  height: 100%;
   gap: 10px;
 }
 
 .gallery {
-  list-style-type: none;
-  padding: 0;
   display: grid;
   gap: 5px;
+  
 }
 
 .gallery__image {
-  max-width: 100%;
-  object-fit: fill;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 /*------------------ Ниже Footer ------------------*/
@@ -256,66 +256,22 @@
   text-shadow: 2px 2px var(--accent-color);
 }
 
-/*-----  Ниже Медиа-запрос для установленной предпочитаемой темы  -----*/
-@media (prefers-color-scheme: light) {
-  .page {
-    --bg-image: url(../images/cover-image-light.png);
-    --menu-list-color: #000028;
-    --accent-color: #ff8dcb;
-    --h1-color: #ffc2e6;
-    --h1-shadow-desktop: #ff0070;
-    --text-color: #353430;
-    --h5-color: #000028;
-  }
-
-  .header__record-sign {
-    display: none;
-  }
-
-  .header__corner_type_top::after {
-    display: none;
-  }
-
-  .header__theme-menu-button_active {
-    outline: 1px solid var(--menu-list-color, #000028);
-  }
-
-  .header__theme-menu-button:hover {
-    outline: 1px solid rgba(50, 49, 45, 0.4);
-  }
-
-  .article__heading {
-    color: var(--text-color, #353430);
-  }
-
-  .link:focus {
-    outline: 1px solid rgba(50, 49, 45, 0.4);
-  }
-
-  @media (width >= 1024px) {
-    .header__title,
-    .footer__title {
-      text-shadow: 4px 4px var(--h1-shadow-desktop, #ff0070);
-    }
-  }
-}
-
 /*--------- Ниже Адаптив для Tablet 768px -------*/
 @media (768px <= width < 1024px) {
   .page {
     padding: 0 20px;
   }
 
-  .corner_type_top {
-    top: 20px;
-  }
-
-  .corner_type_bottom {
-    bottom: 20px;
-  }
-
   .header__record-sign {
     top: 20px;
+  }
+
+  .decorated_zone::before {
+    top: 20px;
+  }
+
+  .decorated_zone::after {
+    bottom: 20px;
   }
 
   .header__title {
@@ -388,28 +344,23 @@
 
   /*---  Галерея с картинками  ---*/
   .pictures {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
-  }
-
-  .pictures .article__answer {
-    grid-row: 1/2;
-    grid-column: 1/-1;
-  }
-
-  .gallery__image {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
   }
 
   .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, min-content);
     gap: 20px;
   }
-
+  .gallery__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;  /* убрать свойства, они указаны в исходнике*/
+  }
+   
   .gallery__item_name_mountain {
     grid-row: 1/2;
     grid-column: 1/3;
@@ -436,6 +387,7 @@
   }
 }
 
+
 /*-----   Ниже Адаптив для Desktop 1024px   -----*/
 @media (width >= 1024px) {
   .page {
@@ -443,16 +395,16 @@
     gap: 60px;
   }
 
-  .corner_type_top {
-    top: 20px;
-  }
-
-  .corner_type_bottom {
-    bottom: 20px;
-  }
-
   .header__record-sign {
     top: 20px;
+  }
+
+  .decorated_zone::before {
+    top: 20px;
+  }
+
+  .decorated_zone::after {
+    bottom: 20px;
   }
 
   .header__theme-menu {
@@ -479,11 +431,15 @@
 
   /*--- Статьи ---*/
   .main {
-    gap: 70px;
+    gap: 80px;
   }
 
   .articles__list {
     gap: 80px;
+  }
+
+  .article__paragraph-list {
+    grid-auto-flow: row;
   }
 
   .article {
@@ -492,6 +448,10 @@
   }
 
   /*  Блок-1 */
+  .article_first {
+    gap: 10px;
+  }
+
   .article_first .article__heading {
     grid-column: 1/2;
   }
@@ -510,18 +470,13 @@
   .article_second .article__paragraph-list {
     grid-row: 2/3;
     display: grid;
-    justify-self: end;
-    gap: 20px;
-  }
-
-  .article_second .article__paragraph-list-item {
-    grid-row: 1/2;
-    align-self: start;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
   }
 
   /*  Блок-3 */
   .article_third {
-    margin-block-start: -20px;
+    gap: 10px;
   }
 
   .article_third .article__heading {
@@ -532,12 +487,13 @@
   .article_third .article__answer {
     grid-column: 2/3;
     grid-row: 1/2;
-    align-self: start;
+    margin-block-end: 10px;
   }
 
   .article_third .article__paragraph-list {
     grid-column: 2/3;
     grid-row: 2/3;
+    gap: 20px;
   }
 
   /*---  Галерея с картинками  ---*/
@@ -549,19 +505,6 @@
   .pictures .article__answer {
     grid-row: 1/2;
     grid-column: 1/-1;
-  }
-
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, min-content);
-    gap: 20px;
-  }
-
-  .gallery__image {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
   }
 
   .gallery__item_name_mountain {

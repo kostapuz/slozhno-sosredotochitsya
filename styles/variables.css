@@ -1,20 +1,14 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 /*
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
 :root {
-  --bg-image: url(images/cover-image-dark.png);
+  --bg-image: url(../images/cover-image-dark.png);
   --accent-color: #ff0070;
-  --menu-list-color: #ff0070;
   --h1-color: #db00ff;
-  --h1-shadow-desktop: #ff0070;
   --text-color: #f1b2ce;
-  --h5-color: #000028;
+  --heading-color: #000028;
 }
+
+
