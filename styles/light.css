@@ -46,10 +46,7 @@
   .header__description {
     color: var(--text-color, #353430);
   }
-  .article__heading {
-    color: var(--text-color, #353430);
-  }
-
+  
   .link:hover {
     border-bottom: 1px solid var(--text-color, #353430);
   }
