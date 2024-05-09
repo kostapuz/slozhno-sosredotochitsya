@@ -89,6 +89,7 @@
     --h1-color: #ffc2e6;
     --h1-shadow-desktop: #ff0070;
     --heading-color: #353430;
+    --text-color: #353430; 
   }
 
   .header__record-sign {
@@ -123,6 +124,14 @@
 
   .link:focus {
     outline: 1px solid var(--heading-color, #353430);
+  }
+
+  .article__heading {
+    color: var(--heading-color, #353430);
+  }
+
+  .article__text {
+    color: var(--text-color, #353430);
   }
   
    @media (width >= 1024px) {
