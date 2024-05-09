@@ -17,7 +17,6 @@
   --text-color: #f1b2ce;
   --heading-color: #000028; 
  
-
   .decorated_zone::before {
     border-top: 1px solid var(--accent-color, #ff0070);
     border-right: 1px solid var(--accent-color, #ff0070);
